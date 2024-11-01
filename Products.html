@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>elevateFit</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!---- icon cdn link---->
+
+
+</head>
+
+<body>
+
+
+    <!--making header-->
+    <header>
+
+        <nav id="nav">
+                  
+            <img src="images/logo-white.png" class="logo">
+            
+            <ul class="menu-bar-side">
+              <li><a href="index.html" style=" all: unset;">Home</a></li>
+              <li><a href="Products.html" style=" all: unset;">Shope</a></li>
+              <li><a href="#" style=" all: unset;">about</a></li>
+              <li><a href="#" style=" all: unset;">contact us</a></li>
+          </ul>
+
+          <ul class="menu-bar">
+
+              <li id="totalPrice">&#36;0.00</li>
+              <li>
+                <a href="./list.html" style="all: unset;"> 
+                    <i class='fas fa-shopping-cart'></i> 
+                </a>
+                <span id="cart-count" class="cart-count">0</span>
+            </li>
+
+          </ul>
+            
+            <i class="fa fa-bars"></i>
+          </nav>
+
+    </header>
+
+
+    <!--Featured Products-->
+
+
+    <div class="small container">
+
+
+        <div class="filters">
+        <div class="price-filter">
+            <label for="price-range">Prix Maximum: <span id="price-value"></span></label>
+            <input type="range" id="price-range" min="0" max="100" value="100">
+        </div>
+        
+        <div class="category-filter">
+            <label for="category-select">Catégorie:</label>
+            <select id="category-select">
+                <option value="all">Toutes les catégories</option>
+                <option value="T-shirt">T-shirts</option>
+                <option value="Pants">Pantalons</option>
+                <option value="Shoes">Chaussers</option>
+                <option value="Accessories">Accessoires</option>
+            </select>
+        </div>
+    </div>
+
+   <div id="products-container">
+    <div class="row" >
+
+
+        <div class=" product  card col-4" data-price="50.00" data-category="T-shirt" onclick="showProductDetails({ name: 'Product 1', img: 'images/product-1.jpg', price: '$50.00', description: 'Description of Product 1.' })" id="1">
+            <img src="Images/product-1.jpg">
+            <h4 class="title">Red Printed T-shirt</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$50.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+         
+
+        <div class=" product  card col-4" data-price="80.00" data-category="Shoes" onclick="showProductDetails({ name: 'black Shoes', img: 'images/product-2.jpg', price: '$80.00', description: 'Description of Product 1.' })" id="2">
+            <img src="Images/product-2.jpg">
+            <h4 class="title">black Shoes</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$80.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+        <div class=" product  card col-4" data-price="60.00" data-category="Pants" onclick="showProductDetails({ name: 'Gray pants', img: 'images/product-3.jpg', price: '$60.00', description: 'Description of Product 1.' })" id="3">
+            <img src="Images/product-3.jpg">
+            <h4 class="title">Gray pants</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$60.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+        <div class=" product  card col-4" data-price="90.00" data-category="T-shirt" onclick="showProductDetails({ name: 'Puma Bleu T-shirt', img: 'images/product-4.jpg', price: '$90.00', description: 'Description of Product 1.' })" id="4">
+            <img src="Images/product-4.jpg">
+            <h4 class="title">Puma Bleu T-shirt</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+
+            </div>
+            <p class="price">$90.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+
+        <div class="product col-4 card " data-price="40.00" data-category="Shoes" onclick="showProductDetails({ name: 'Gray Shoes', img: 'images/product-5.jpg', price: '$40.00', description: 'Description of Product 1.' })" id="5">
+            <img src="Images/product-5.jpg">
+            <h4 class="title">Gray Shoes</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$40.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+        <div class="product col-4 card " data-price="30.00" data-category="T-shirt" onclick="showProductDetails({ name: 'Puma Black T-shirt', img: 'images/product-6.jpg', price: '$30.00', description: 'Description of Product 1.' })" id="6">
+            <img src="Images/product-6.jpg">
+            <h4 class="title">Puma Black T-shirt</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$30.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+        <div class="product col-4 card " data-price="70.00" data-category="Accessories" onclick="showProductDetails({ name: 'Chaussettes Accessories', img: 'images/product-7.jpg', price: '$70.00', description: 'Description of Product 1.' })" id="7">
+            <img src="Images/product-7.jpg">
+            <h4 class="title">Chaussettes Accessories</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$70.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+        <div class="product col-4 card " data-price="50.00" data-category="Accessories" onclick="showProductDetails({ name: 'Accessories Montre Fossil', img: 'images/product-8.jpg', price: '$50.00', description: 'Description of Product 1.' })" id="8">
+            <img src="Images/product-8.jpg">
+            <h4 class="title">Accessories Montre Fossil</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+
+            </div>
+            <p class="price">$50.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+        <div class="product col-4 card " data-price="80.00" data-category="Accessories" onclick="showProductDetails({ name: 'Accessories Montre RoadSter', img: 'images/product-9.jpg', price: '$80.00', description: 'Description of Product 1.' })" id="9">
+            <img src="Images/product-9.jpg">
+            <h4 class="title">Accessories Montre RoadSter</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$80.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+        <div class="product col-4 card " data-price="60.00" data-category="Shoes" onclick="showProductDetails({ name: 'Black Red Shoes', img: 'images/product-10.jpg', price: '$60.00', description: 'Description of Product 1.' })" id="10">
+            <img src="Images/product-10.jpg">
+            <h4 class="title">Black Red Shoes</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$60.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+        <div class="product col-4 card" data-price="60.00" data-category="Shoes" onclick="showProductDetails({ name: 'Gray Sport Shoes', img: 'images/product-11.jpg', price: '$80.00', description: 'Description of Product 1.' })" id="11">
+            <img src="Images/product-11.jpg">
+            <h4 class="title">Gray Sport Shoes</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$80.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+
+        <div class="product col-4 card" data-price="60.00" data-category="Pants" onclick="showProductDetails({ name: 'Black Pants', img: 'images/product-12.jpg', price: '$60.00', description: 'Description of Product 1.' })" id="12">
+            <img src="Images/product-12.jpg">
+            <h4 class="title">Black Pants</h4>
+            <div class="rating">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+            <p class="price">$60.00</p>
+            <button class="btn hidden">Add To Cart</button>
+        </div>
+       
+    </div>
+
+
+       
+        `
+        <div class="page-btn">
+            <span>1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>&#8594;</span>
+
+        </div>
+    </div>
+
+    <!-------footer------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+
+
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and Ios mobile phone.</p>
+
+
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+
+                </div>
+
+                <div class="footer-col-2">
+                    <img src="images/logo-white.png">
+                    <p>Our purpose is To Sustainably Make the Pleasure and Benefits of Sports Accessible to the Many.
+                    </p>
+                </div>
+
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+
+                </div>
+
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+
+                </div>
+            </div>
+            <!--add horizontal line and copyright text along with clickable link-->
+            <hr>
+            <a href="" class="copyright">Copyright 2024 - Made with ❤️ LorenzCipher</a>
+        </div>
+    </div>
+
+    <!-----------------JS----------------------->
+<script src="./js/product.js"></script>
+<script src="./js/navbar.js"></script>
+
+
+</body>
+
+</html>
