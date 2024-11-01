@@ -1,39 +1,65 @@
 
 document.addEventListener('DOMContentLoaded', function() {
+    const productsContainer = document.getElementById('products-container');
+    const priceRange = document.getElementById('price-range');
+    const priceValue = document.getElementById('price-value');
+    const categorySelect = document.getElementById('category-select');
 
-    const ProductImg = document.getElementById("product-img");
-    const SmallImg = document.getElementsByClassName("small-img");
+    
+    function updateProducts() {
+        const maxPrice = parseFloat(priceRange.value);
+        const selectedCategory = categorySelect.value;
 
-    if (SmallImg.length > 0) {
-        Array.from(SmallImg).forEach((img) => {
-            img.onclick = function() {
-                ProductImg.src = this.src;
+        priceValue.textContent = `$${maxPrice}`;
+
+        const products = document.querySelectorAll('.product');
+        products.forEach(product => {
+            const price = parseFloat(product.getAttribute('data-price'));
+            const category = product.getAttribute('data-category');
+
+            if (price <= maxPrice && (selectedCategory === 'all' || category === selectedCategory)) {
+                product.style.display = 'block'; 
+            } else {
+                product.style.display = 'none'; 
             }
         });
     }
 
+    priceRange.addEventListener('input', updateProducts);
+    categorySelect.addEventListener('change', updateProducts);
 
-    window.addToCart = function(product) {
-        let cartItems = getCart();
-        
- 
-        const existingItem = cartItems.find(item => item.name === product.name);
-        
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cartItems.push({
-                ...product,
-                quantity: 1
-            });
+
+    updateProducts();
+
+    productsContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains('btn') && event.target.textContent === 'Add To Cart') {
+            const productCard = event.target.closest('.product');
+            const product = {
+                name: productCard.querySelector('.title').textContent,
+                price: productCard.querySelector('.price').textContent,
+                image: productCard.querySelector('img').src,
+                quantity: 1,
+                size: 'M' 
+            };
+
+            Cart.addItem(product);
+            updateNavbarCart();
+            alert('Product added to cart successfully!');
         }
+    });
 
-        updateCart(cartItems);
-    }
 
-    window.showProductDetails = function(product) {
-
-        localStorage.setItem('selectedProduct', JSON.stringify(product));
-        window.location.href = 'product-detail.html';
-    }
+    productsContainer.addEventListener('click', function(event) {
+        const productCard = event.target.closest('.product');
+        if (productCard && !event.target.classList.contains('btn')) {
+            const product = {
+                name: productCard.querySelector('.title').textContent,
+                price: productCard.querySelector('.price').textContent,
+                img: productCard.querySelector('img').src,
+                id: productCard.id
+            };
+            localStorage.setItem('selectedProduct', JSON.stringify(product));
+            window.location.href = 'product-detail.html';
+        }
+    });
 });
