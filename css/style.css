@@ -580,3 +580,34 @@ form a{
 }
 
 
+.checkout-button-container {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+.checkout-btn {
+    display: inline-block;
+    background: #52ad9c;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background: #428a7d;
+    cursor: pointer;
+}
+
+/* Pour la version mobile */
+@media (max-width: 768px) {
+    .checkout-btn {
+        width: 80%;
+        text-align: center;
+        padding: 10px 20px;
+    }
+}
