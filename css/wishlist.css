@@ -1,0 +1,121 @@
+/* wishlist.css */
+
+.wishlist-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.wishlist-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 24px;
+}
+
+.wishlist-items-container {
+    overflow-x: auto;
+}
+
+.wishlist-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.wishlist-table th,
+.wishlist-table td {
+    padding: 15px;
+    text-align: left; /* Changed back to left alignment */
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.wishlist-table th {
+    background-color: #f8f8f8;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Center image under "Product Image" column */
+.wishlist-table td:first-child {
+    text-align: center;
+}
+
+.wishlist-table img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+
+/* Left-align product details under "Product Details" column */
+.wishlist-table .product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.wishlist-table .product-name {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.wishlist-table .product-price {
+    color: #ff523b;
+}
+
+/* Left-align remove button under "Action" column */
+.remove-from-wishlist {
+    background-color: #ff523b;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-from-wishlist:hover {
+    background-color: #ff2f13;
+}
+
+.empty-wishlist {
+    text-align: center;
+    color: #888;
+    font-size: 18px;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .wishlist-table th,
+    .wishlist-table td {
+        padding: 10px;
+    }
+
+    .wishlist-table img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .remove-from-wishlist {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+.add-to-cart {
+    background-color: #ff523b;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 10px;
+}
+
+.add-to-cart:hover {
+    background-color: #ff2f13;
+}

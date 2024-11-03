@@ -11,6 +11,118 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    /* Side Bar */
+    .sidebar {
+        transform: translate(100%, 37px);
+        /* transform: translateY(37px); */
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.open {
+        transform: translate(0, 37px);
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 40;
+    }
+
+    .overlay.open {
+        display: block;
+    }
+
+    .sidebar .icon {
+        width: 35px;
+        height: 35px;
+        margin-right: 15px;
+    }
+
+    a.link {
+        /* color: #556d86; */
+        display: flex;
+        margin: 0;
+        align-items: center;
+        font-weight: 500;
+        line-height: 1.5;
+        padding: 10px 15px;
+        color: #56595f;
+    }
+
+    a.link:hover {
+        background-color: #d3e3fd;
+    }
+
+    /* End Side Bar */
+
+    .after-icon {
+        height: inherit;
+        /* color: #ef4444; */
+    }
+
+    /* sidebar */
+    .sidebar {
+        position: fixed;
+        right: 0;
+        top: 3rem;
+        padding: 0;
+        /* padding-top: 3.5rem; */
+        width: 16rem;
+        height: 100%;
+        color: #1F2937;
+        background: #cbcdcf;
+        z-index: 200;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Media query for screens smaller than 768px */
+    @media (max-width: 768px) {
+        .menu-bar-side {
+            display: none;
+            /* Hide the side menu */
+        }
+
+        #menu-button {
+            /* position: absolute; */
+            right: 30px;
+            display: block;
+            /* Show the menu button */
+        }
+
+        /* .menu-bar {
+            display: flex;
+        } */
+    }
+
+    /* For larger screens */
+    @media (min-width: 769px) {
+        #menu-button {
+            display: none;
+            /* Hide the menu button */
+        }
+    }
+
+    /* For larger screens */
+    @media (max-width: 1024px) {
+        #menu-bar-side {
+            position: relative;
+            right: 200px;
+            /* Hide the menu button */
+        }
+    }
+</style>
+<!--- owl carsoul ---->
 <!---- icon cdn link---->
 
 
@@ -18,38 +130,71 @@
 
     <body>
 
-       
+       <!--making header-->
+<header>
+
+    <nav id="nav">
+
+        <img src="images/logo-white.png" class="logo">
+
+        <ul class="menu-bar-side">
+            <li><a href=" index.html" style=" all: unset;">Home</a></li>
+            <li><a href="Products.html" style=" all: unset;">Shop</a></li>
+            <li><a href="wishlist.html" style=" all: unset;">wishlist</a></li>
+            <li><a href="#" style=" all: unset;">about</a></li>
+            <li><a href="#" style=" all: unset;">contact us</a></li>
+        </ul>
+
+        <ul class="menu-bar" style="margin-right: 65px;">
+            <li id="totalPrice">&#36;0.00</li>
+            <li>
+                <a href="./list.html" style="all: unset;"> 
+                    <i class='fas fa-shopping-cart'></i> 
+                </a>
+                <span id="cart-count" class="cart-count">0</span>
+            </li>
+
+        </ul>
+        <div id="menu-button">
+            <i class="fa fa-bars"></i>
+        </div>
+    </nav>
+    <!-- Side Bar -->
+    <div id="sidebar" class="sidebar">
+        <div class=" menu">
+            <a href="./index.html" class="link">
+                <img class="icon" src="./images/svgs/home.svg" alt="">
+                Home
+            </a>
+            <a href="./wishlist.html" class="link">
+                <img class="icon" src="./images/svgs/heart.svg" alt="">
+                Wish List
+            </a>
+            <a href="#about" class="link">
+                <img class="icon" src="./images/svgs/about.svg" alt="">
+                About
+            </a>
+            <a href="#contact" class="link">
+                <img class="icon" src="./images/svgs/contact.svg" alt="">
+                Contact
+            </a>
+            <a href="./sign-up.html" class="link">
+                <img class="icon" src="./images/svgs/login.svg" alt="">
+                Login & SignUp
+            </a>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" class="overlay"></div>
+
+
+
+
+</header>
+<!--- end header --->
         
-            <!--making header-->
-            <header>
-      
-                <nav id="nav">
-                  
-                  <img src="images/logo-white.png" class="logo">
-                  
-                  <ul class="menu-bar-side">
-                    <li><a href="index.html" style=" all: unset;">Home</a></li>
-                    <li><a href="Products.html" style=" all: unset;">Shope</a></li>
-                    <li><a href="#" style=" all: unset;">about</a></li>
-                    <li><a href="#" style=" all: unset;">contact us</a></li>
-                </ul>
-    
-                <ul class="menu-bar">
-    
-                    <li id="totalPrice">&#36;0.00</li>
-                    <li>
-                        <a href="./list.html" style="all: unset;"> 
-                            <i class='fas fa-shopping-cart'></i> 
-                        </a>
-                        <span id="cart-count" class="cart-count">0</span>
-                    </li>
-    
-                </ul>
-                  
-                  <i class="fa fa-bars"></i>
-                </nav>
-           
-          </header>
+ 
 
     <!------------Single Products Detail-------------->
    
@@ -103,6 +248,7 @@
                     <!--no of products-->
                     <input id="quantity" type="number" min="1" value="1">
                     <a href="#" id="addToCart" class="btn">Add To Cart</a>
+                    <a href="#" id="addToWishlist" class="btn">Add To Wishlist</a>
                     <h3>Product Details <i class="fa fa-indent" aria-hidden="true"></i></h3>
                     <br>
                     <p>Give Your summer wardrobe a style upgrade with the HTX Men's 
@@ -237,10 +383,11 @@
 
     <!-----------------JS----------------------->
 
-
+ <script src="js/wishlist.js"></script>
 <script src="./js/detail.js"></script>
 <script src="./js/list.js"></script>
 <script src="./js/navbar.js"></script>
+<script src="./js/sidebar.js"></script>
 
 
     </body>

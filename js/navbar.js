@@ -71,12 +71,4 @@ window.updateNavbarCart = function() {
 document.addEventListener('DOMContentLoaded', function() {
     updateNavbarCart();
 
-    const menuIcon = document.querySelector('.fa-bars');
-    const menuBarSide = document.querySelector('.menu-bar-side');
-    
-    if (menuIcon && menuBarSide) {
-        menuIcon.addEventListener('click', function() {
-            menuBarSide.classList.toggle('show');
-        });
-    }
 });

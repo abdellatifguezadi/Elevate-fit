@@ -62,15 +62,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     const match = onclickAttr.match(/goToProduct\((.*?)\)/);
                     if (match) {
-                        try {
-
-                            const productData = eval('(' + match[1] + ')');
-                            localStorage.setItem('selectedProduct', JSON.stringify(productData));
-                            window.location.href = 'product-detail.html';
-                        } catch (e) {
-                            console.error("Erreur lors du parsing des données du produit:", e);
-                        }
-                    }
+    const productData = eval('(' + match[1] + ')');
+    localStorage.setItem('selectedProduct', JSON.stringify(productData));
+    window.location.href = 'product-detail.html';
+}
                 }
             }
         });
