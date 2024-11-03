@@ -99,3 +99,41 @@ function updateCheckoutButton() {
 }
 
 document.addEventListener('DOMContentLoaded', updateCheckoutButton);
+
+function addToCart(product) {
+    let cartItems = getCart(); // Récupérer les articles du panier
+
+    const existingProductIndex = cartItems.findIndex(item => item.name === product.name);
+
+    if (existingProductIndex !== -1) {
+        // Si le produit existe déjà, augmentez la quantité
+        cartItems[existingProductIndex].quantity += product.quantity;
+    } else {
+        // Sinon, ajoutez un nouvel article
+        cartItems.push(product);
+    }
+
+    updateCart(cartItems); // Mettez à jour le stockage du panier
+    console.log("Cart updated:", cartItems); // Log pour débogage
+}
+
+// Fonction pour récupérer le panier
+function getCart() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+// Fonction pour mettre à jour le panier dans le localStorage
+function updateCart(cartItems) {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+}
+
+// Fonction pour mettre à jour l'affichage du panier
+function updateNavbarCart() {
+    const cartItems = getCart();
+    const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const cartCountElem = document.getElementById('cart-count');
+
+    if (cartCountElem) {
+        cartCountElem.innerHTML = cartCount > 0 ? cartCount : '';
+    }
+}
