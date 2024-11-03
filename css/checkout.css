@@ -121,3 +121,73 @@
     }
   }
 
+/* Gardez tout votre CSS existant et ajoutez ces modifications à la fin */
+
+@media (max-width: 500px) {
+  .container-2 {
+      padding-right: 10px;
+      padding-left: 10px;
+  }
+
+  .d-flex {
+      display: block;
+      padding: 15px;
+  }
+
+  h2 {
+      text-align: center;
+      padding-left: 0;
+      margin-bottom: 20px;
+  }
+
+  label > span {
+      float: none;
+      width: 100%;
+      display: block;
+      margin-bottom: 5px;
+  }
+
+  input[type="text"], 
+  input[type="tel"], 
+  input[type="email"], 
+  select {
+      width: 100%;
+      margin-bottom: 15px;
+  }
+
+  .Yorder {
+      margin-top: 30px;
+      height: auto;
+      min-height: 400px;
+  }
+
+  td {
+      padding: 15px 10px 15px 0;
+  }
+
+  p {
+      padding-left: 0;
+      margin: 10px 0;
+  }
+
+  /* Ajustements pour les éléments de paiement */
+  .Yorder > div {
+      padding: 10px 0;
+  }
+
+  /* Ajustement pour le bouton */
+  button {
+      margin-top: 20px;
+      padding: 15px;
+  }
+
+  /* Ajustement pour la table */
+  table {
+      margin: 10px 0;
+  }
+
+  /* Ajustement pour les labels */
+  label {
+      margin: 10px 0;
+  }
+}
