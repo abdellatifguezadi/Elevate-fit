@@ -20,14 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-
-        const ProductImg = document.getElementById("product-img");
-        smallImages.forEach((img) => {
-            img.onclick = function() {
-                ProductImg.src = this.src;
-            }
-        });
-
         const addToCartButton = document.getElementById('addToCart');
         if (addToCartButton) {
             addToCartButton.addEventListener('click', (e) => {
