@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (productsContainer) {
         productsContainer.addEventListener('click', function(event) {
             const productCard = event.target.closest('.product');
-
             if (event.target.classList.contains('btn') && event.target.textContent === 'Add To Cart') {
                 if (productCard) {
                     const product = {
@@ -46,12 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         quantity: 1,
                         size: 'M'
                     };
-
-                    if (typeof Cart !== 'undefined' && Cart.addItem) {
                         Cart.addItem(product);
                         updateNavbarCart();
-                   
-                    }
                 }
             }
 
