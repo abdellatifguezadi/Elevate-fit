@@ -43,6 +43,7 @@ const Cart = {
     getTotalCount: function() {
         return this.getItems().reduce((total, item) => total + item.quantity, 0);
     },
+    
 
     getTotalPrice: function() {
         return this.getItems().reduce((total, item) => {
